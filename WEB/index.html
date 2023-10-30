@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Достопримечательности России</title>
+	<link rel="stylesheet" href="Styles/styles.css">
+	<script src="Script/data.js"></script>
+</head>
+<body>
+
+	<header>
+		<div class="top">
+			<h1>Самые популярные достопримечательности России</h1>
+		</div>
+	</header>
+
+	<main>
+		<div class="content">
+			<div class="row">
+				<!-- место для вставки созданного контента -->
+			</div>
+		</div>
+	</main>
+	<script>
+
+		// Далее указан алгоритм в котором выполняется задание
+		// ... ваше решение может быть иным
+		
+
+		// создаем первый блок
+		// ...
+		let div1 = document.createElement('div');
+		div1.className = 'div1';
+		let img = document.createElement('img');
+		let h2 = document.createElement('h2');
+		let p = document.createElement('p');
+		
+		// вставим узлы в первый блок
+		document.body.append(div1);
+		div1.append(img);
+		div1.append(h2);
+		div1.append(p);
+		
+		// создаем следующие блоки клонированием
+		let div2 = div1.cloneNode(true);
+		let div3 = div1.cloneNode(true);
+		let div4 = div1.cloneNode(true);
+
+		// вставляем контент в созданные блоки
+		let div1_children = div1.children;
+		div1_children[0].setAttribute('src', info[0].img);
+		div1_children[1].innerHTML = info[0].name;
+		div1_children[2].innerHTML = info[0].text;
+
+		let div2_children = div2.children;
+		div2_children[0].setAttribute('src', info[1].img);
+		div2_children[1].innerHTML = info[1].name;
+		div2_children[2].innerHTML = info[1].text;
+
+		let div3_children = div3.children;
+		div3_children[0].setAttribute('src', info[2].img);
+		div3_children[1].innerHTML = info[2].name;
+		div3_children[2].innerHTML = info[2].text;
+
+		let div4_children = div4.children;
+		div4_children[0].setAttribute('src', info[3].img);
+		div4_children[1].innerHTML = info[3].name;
+		div4_children[2].innerHTML = info[3].text;
+		
+		// получаем ссылку на целевой элемент 
+		let row = document.querySelector(".row");
+
+		// вставляем в целевой элемент созданный контент
+		row.insertAdjacentElement("beforeend", div1);
+		row.insertAdjacentElement("beforeend", div2);
+		row.insertAdjacentElement("beforeend", div3);
+		row.insertAdjacentElement("beforeend", div4);
+	</script>
+	<footer>
+		<div class="footer">
+
+		</div>
+	</footer>
+</body>
+</html>

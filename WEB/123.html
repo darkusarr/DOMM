@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Дела</title>
+	
+</head>
+<body>
+	<h2>Список дел</h2>
+	<h4><ul id="list">
+		<li id="item1">Умыться</li>
+		<li id="item2">Позавтракать</li>
+		<li id="item3">Дальше спать</li>
+	</ul></h4>
+	<script>
+		var ulist = document.getElementById("list");
+		var li1 = document.getElementById("item1");
+		var li2 = document.getElementById("item2");
+		var li3 = document.getElementById("item3");
+		li1.innerHTML = "Спать";
+		li2.innerHTML = "Пойти на учебу";
+		ulist.removeChild(li3);
+		var paragraph = document.createElement("p");
+		paragraph.innerHTML = "текста нет";
+		document.body.appendChild(paragraph);
+		var paragraphCopy = paragraph.cloneNode(true);
+		document.body.appendChild(paragraphCopy);
+	</script>
+</body>
+</html>
